@@ -1,0 +1,58 @@
+[01-Jul-2014 19:00:55 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so' - /opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so: undefined symbol: zend_new_interned_string in Unknown on line 0
+[01-Jul-2014 19:00:55 America/Chicago] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20090626
+These options need to match
+ in Unknown on line 0
+[01-Jul-2014 19:00:55 America/Chicago] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at /home1/spotwifi/public_html/beebee/zapatos/index.php:19) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 2
+[01-Jul-2014 19:00:55 America/Chicago] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home1/spotwifi/public_html/beebee/zapatos/index.php:19) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 2
+[01-Jul-2014 19:00:55 America/Chicago] PHP Warning:  mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: Access denied for user 'root'@'localhost' (using password: NO) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:00:55 America/Chicago] PHP Fatal error:  Access denied for user 'root'@'localhost' (using password: NO) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:01:01 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so' - /opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so: undefined symbol: zend_new_interned_string in Unknown on line 0
+[01-Jul-2014 19:01:01 America/Chicago] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20090626
+These options need to match
+ in Unknown on line 0
+[01-Jul-2014 19:01:01 America/Chicago] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at /home1/spotwifi/public_html/beebee/zapatos/index.php:19) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 2
+[01-Jul-2014 19:01:01 America/Chicago] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home1/spotwifi/public_html/beebee/zapatos/index.php:19) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 2
+[01-Jul-2014 19:01:01 America/Chicago] PHP Warning:  mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: Access denied for user 'root'@'localhost' (using password: NO) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:01:01 America/Chicago] PHP Fatal error:  Access denied for user 'root'@'localhost' (using password: NO) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:07:37 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so' - /opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so: undefined symbol: zend_new_interned_string in Unknown on line 0
+[01-Jul-2014 19:07:37 America/Chicago] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20090626
+These options need to match
+ in Unknown on line 0
+[01-Jul-2014 19:07:37 America/Chicago] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at /home1/spotwifi/public_html/beebee/zapatos/index.php:19) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 2
+[01-Jul-2014 19:07:37 America/Chicago] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home1/spotwifi/public_html/beebee/zapatos/index.php:19) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 2
+[01-Jul-2014 19:07:39 America/Chicago] PHP Warning:  mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: Access denied for user 'root'@'gator3078.hostgator.com' (using password: YES) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:07:39 America/Chicago] PHP Fatal error:  Access denied for user 'root'@'gator3078.hostgator.com' (using password: YES) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:07:42 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so' - /opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so: undefined symbol: zend_new_interned_string in Unknown on line 0
+[01-Jul-2014 19:07:42 America/Chicago] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20090626
+These options need to match
+ in Unknown on line 0
+[01-Jul-2014 19:07:42 America/Chicago] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at /home1/spotwifi/public_html/beebee/zapatos/index.php:19) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 2
+[01-Jul-2014 19:07:42 America/Chicago] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home1/spotwifi/public_html/beebee/zapatos/index.php:19) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 2
+[01-Jul-2014 19:07:43 America/Chicago] PHP Warning:  mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: Access denied for user 'root'@'gator3078.hostgator.com' (using password: YES) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:07:43 America/Chicago] PHP Fatal error:  Access denied for user 'root'@'gator3078.hostgator.com' (using password: YES) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:07:49 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so' - /opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so: undefined symbol: zend_new_interned_string in Unknown on line 0
+[01-Jul-2014 19:07:49 America/Chicago] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20090626
+These options need to match
+ in Unknown on line 0
+[01-Jul-2014 19:07:49 America/Chicago] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at /home1/spotwifi/public_html/beebee/zapatos/index.php:19) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 2
+[01-Jul-2014 19:07:49 America/Chicago] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home1/spotwifi/public_html/beebee/zapatos/index.php:19) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 2
+[01-Jul-2014 19:07:50 America/Chicago] PHP Warning:  mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: Access denied for user 'root'@'gator3078.hostgator.com' (using password: YES) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:07:50 America/Chicago] PHP Fatal error:  Access denied for user 'root'@'gator3078.hostgator.com' (using password: YES) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:08:56 America/Chicago] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so' - /opt/php54/lib/php/extensions/no-debug-non-zts-20100525/imagick.so: undefined symbol: zend_new_interned_string in Unknown on line 0
+[01-Jul-2014 19:08:56 America/Chicago] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20100525
+PHP    compiled with module API=20090626
+These options need to match
+ in Unknown on line 0
+[01-Jul-2014 19:08:57 America/Chicago] PHP Warning:  mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: Access denied for user 'root'@'gator3078.hostgator.com' (using password: YES) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12
+[01-Jul-2014 19:08:57 America/Chicago] PHP Fatal error:  Access denied for user 'root'@'gator3078.hostgator.com' (using password: YES) in /home1/spotwifi/public_html/beebee/zapatos/Connections/conexionzapatos.php on line 12

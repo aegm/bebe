@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^beebee\.spotwifi\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.beebee\.spotwifi\.net$
+RewriteRule ^/?$ "http\:\/\/beebee\.spotwifi\.net\/index\.html" [R=301,L]
