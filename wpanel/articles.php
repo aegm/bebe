@@ -1,9 +1,20 @@
+<?php
+require '../config.php';
+require 'class/modelo.class.php';
+require 'class/color.class.php';
+require 'class/talla.class.php';
+$modelos = new modelo;
+$colores = new color;
+$tallas = new talla;
+
+$models = $modelos->listar();
+$color = $colores->listar();
+$talla = $tallas->listar();
+
+
+//die();
+?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="Es-es">
     <head>
         <meta charset="UTF-8">
@@ -49,12 +60,12 @@ and open the template in the editor.
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Overview</a></li>
-                        <li><a href="#">Reports</a></li>
-                        <li><a href="#">Analytics</a></li>
-                        <li><a href="#">Export</a></li>
+                        <li><a href="#">Usuarios</a></li>
+                        <li><a href="#">Marcas</a></li>
+                        <li class="active"><a href="#">Articulos</a></li>
+
                     </ul>
-                    <ul class="nav nav-sidebar">
+                    <!--ul class="nav nav-sidebar">
                         <li><a href="">Nav item</a></li>
                         <li><a href="">Nav item again</a></li>
                         <li><a href="">One more nav</a></li>
@@ -65,169 +76,186 @@ and open the template in the editor.
                         <li><a href="">Nav item again</a></li>
                         <li><a href="">One more nav</a></li>
                         <li><a href="">Another nav item</a></li>
-                    </ul>
+                    </ul-->
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header">Articulos</h1>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h2><strong>Forma Basica</strong> Articulos</h2>
+                                </div>
+                                <div class="panel-body">
+                                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal ">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Empresa</label>
+                                            <div class="col-md-9">
+                                                <p class="form-control-static">Empresa de prueba</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="select">Categoria</label>
+                                            <div class="col-md-9">
+                                                <?php
+                                                ?>
+                                                <select id="slt_cat" name="slt_cat" class="form-control" size="1">
+                                                    <option value="0">Selecciona</option>
+                                                    <?php
+                                                    foreach ($models as $campos => $values) {
+                                                        ?>
+                                                        <option required='required' value="<?php echo $values['CodigoModelo']; ?>"><?php echo $values['Descripcion']; ?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
 
-                    <div class="row placeholders">
-                        <div class="col-xs-6 col-sm-3 placeholder">
-                            <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="200x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzBEOEZEQiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEwMCIgeT0iMTAwIiBzdHlsZT0iZmlsbDojZmZmO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEzcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjAweDIwMDwvdGV4dD48L3N2Zz4=">
-                            <h4>Label</h4>
-                            <span class="text-muted">Something else</span>
-                        </div>
-                        <div class="col-xs-6 col-sm-3 placeholder">
-                            <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="200x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzM5REJBQyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEwMCIgeT0iMTAwIiBzdHlsZT0iZmlsbDojMUUyOTJDO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEzcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjAweDIwMDwvdGV4dD48L3N2Zz4=">
-                            <h4>Label</h4>
-                            <span class="text-muted">Something else</span>
-                        </div>
-                        <div class="col-xs-6 col-sm-3 placeholder">
-                            <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="200x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzBEOEZEQiIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEwMCIgeT0iMTAwIiBzdHlsZT0iZmlsbDojZmZmO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEzcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjAweDIwMDwvdGV4dD48L3N2Zz4=">
-                            <h4>Label</h4>
-                            <span class="text-muted">Something else</span>
-                        </div>
-                        <div class="col-xs-6 col-sm-3 placeholder">
-                            <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="200x200" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzM5REJBQyIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEwMCIgeT0iMTAwIiBzdHlsZT0iZmlsbDojMUUyOTJDO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEzcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MjAweDIwMDwvdGV4dD48L3N2Zz4=">
-                            <h4>Label</h4>
-                            <span class="text-muted">Something else</span>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="select">Sub-Categoria</label>
+                                            <div class="col-md-9">
+                                                <?php
+                                                ?>
+                                                <select id="slt_sub_cat" name="slt_sub_cat" class="form-control" size="1">
+                                                    <option value="0">Selecciona</option>
+                                                    <?php
+                                                    foreach ($color as $campos => $values) {
+                                                        ?>
+                                                        <option required='required' value="<?php echo $values['CodigoColor']; ?>"><?php echo $values['Descripcion']; ?></option>
+                                                        <?php
+                                                    }
+                                                    ?>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group has-feedback">
+                                            <label class="col-md-3 control-label" for="text-input">Costo</label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="text-input" required="required" id="txt_costo" name="txt_costo" class="form-control" placeholder="00">
+                                                <span class="fa fa-asterisk form-control-feedback"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="select">Talla</label>
+                                            <div class="col-md-9">
+                                                <?php
+                                                ?>
+                                                <select id="slt_talla" name="slt_talla" class="form-control" size="1">
+                                                    <option value="0">Selecciona</option>
+                                                    <?php
+                                                    foreach ($talla as $campos => $values) {
+                                                        ?>
+                                                        <option required='required' value="<?php
+                                                        echo $values['CodigoTalla'] . '/' . $values['Descripcion'];
+                                                        ;
+                                                        ?>"><?php echo $values['Descripcion']; ?></option>
+                                                                <?php
+                                                            }
+                                                            ?>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="textarea-input">Descripcion</label>
+                                            <div class="col-md-9">
+                                                <textarea id="text_descripcion" name="text_descripcion" rows="9" class="form-control" placeholder="Content.." style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 194px;"></textarea>
+                                            </div>
+                                        </div>
+                                        <div id="inv" class="row">
+
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="panel-footer">
+                                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Guardar</button>
+                                    <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Limpiar</button>
+                                </div>	
+                            </div>
                         </div>
                     </div>
 
-                    <h2 class="sub-header">Section title</h2>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1,001</td>
-                                    <td>Lorem</td>
-                                    <td>ipsum</td>
-                                    <td>dolor</td>
-                                    <td>sit</td>
-                                </tr>
-                                <tr>
-                                    <td>1,002</td>
-                                    <td>amet</td>
-                                    <td>consectetur</td>
-                                    <td>adipiscing</td>
-                                    <td>elit</td>
-                                </tr>
-                                <tr>
-                                    <td>1,003</td>
-                                    <td>Integer</td>
-                                    <td>nec</td>
-                                    <td>odio</td>
-                                    <td>Praesent</td>
-                                </tr>
-                                <tr>
-                                    <td>1,003</td>
-                                    <td>libero</td>
-                                    <td>Sed</td>
-                                    <td>cursus</td>
-                                    <td>ante</td>
-                                </tr>
-                                <tr>
-                                    <td>1,004</td>
-                                    <td>dapibus</td>
-                                    <td>diam</td>
-                                    <td>Sed</td>
-                                    <td>nisi</td>
-                                </tr>
-                                <tr>
-                                    <td>1,005</td>
-                                    <td>Nulla</td>
-                                    <td>quis</td>
-                                    <td>sem</td>
-                                    <td>at</td>
-                                </tr>
-                                <tr>
-                                    <td>1,006</td>
-                                    <td>nibh</td>
-                                    <td>elementum</td>
-                                    <td>imperdiet</td>
-                                    <td>Duis</td>
-                                </tr>
-                                <tr>
-                                    <td>1,007</td>
-                                    <td>sagittis</td>
-                                    <td>ipsum</td>
-                                    <td>Praesent</td>
-                                    <td>mauris</td>
-                                </tr>
-                                <tr>
-                                    <td>1,008</td>
-                                    <td>Fusce</td>
-                                    <td>nec</td>
-                                    <td>tellus</td>
-                                    <td>sed</td>
-                                </tr>
-                                <tr>
-                                    <td>1,009</td>
-                                    <td>augue</td>
-                                    <td>semper</td>
-                                    <td>porta</td>
-                                    <td>Mauris</td>
-                                </tr>
-                                <tr>
-                                    <td>1,010</td>
-                                    <td>massa</td>
-                                    <td>Vestibulum</td>
-                                    <td>lacinia</td>
-                                    <td>arcu</td>
-                                </tr>
-                                <tr>
-                                    <td>1,011</td>
-                                    <td>eget</td>
-                                    <td>nulla</td>
-                                    <td>Class</td>
-                                    <td>aptent</td>
-                                </tr>
-                                <tr>
-                                    <td>1,012</td>
-                                    <td>taciti</td>
-                                    <td>sociosqu</td>
-                                    <td>ad</td>
-                                    <td>litora</td>
-                                </tr>
-                                <tr>
-                                    <td>1,013</td>
-                                    <td>torquent</td>
-                                    <td>per</td>
-                                    <td>conubia</td>
-                                    <td>nostra</td>
-                                </tr>
-                                <tr>
-                                    <td>1,014</td>
-                                    <td>per</td>
-                                    <td>inceptos</td>
-                                    <td>himenaeos</td>
-                                    <td>Curabitur</td>
-                                </tr>
-                                <tr>
-                                    <td>1,015</td>
-                                    <td>sodales</td>
-                                    <td>ligula</td>
-                                    <td>in</td>
-                                    <td>libero</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         </div>
         <?php
-        // put your code here
+// put your code here
         ?>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!--Boostrap Js-->
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $(function() {
+                    var cat = $('#slt_cat'),
+                            subCat = $('#slt_sub_cat'),
+                            costo = $('#txt_costo'),
+                            talla = $('#slt_talla'),
+                            existencia = $('#txt_existencia'),
+                            descripcion = $('#text_descripcion'),
+                            min, max, n, bValid;
+                    function listarInventario(array) {
+                        bValid = true;
+                        var corrida = array,
+                                cantidad = corrida.split("-");
+                        var min = parseInt(cantidad[0]);
+                        var max = parseInt(cantidad[1]);
+                        for (n = min; n <= max; n++) {
+                            verificaTalla(n);
+                            if (bValid) {
+                                var html = '<div id="talla" title="' + n + '" class="col-md-12">';
+                                html += '<div class="form-group col-md-2">'
+                                html += '<input class="form-control" value="' + n + '">';
+                                html += '</div>';
+                                html += '<div class="form-group col-md-2">'
+                                html += '<input class="form-control" placeholder="Existencia" value="">';
+                                html += '</div>';
+                                html += '<div class="form-group col-md-3">'
+                                html += '<input class="form-control" placeholder="Codigo Alterno" value="">';
+                                html += '</div>';
+                                html += '<div class="form-group col-md-2">'
+                                html += '<input class="form-control" placeholder="Costo" value="">';
+                                html += '</div>';
+                                html += '<div class="form-group col-md-3">'
+                                html += '<input class="form-control" placeholder="Precio al Publico" value="">';
+                                html += '</div>';
+                                html += '</div>';
+                                $('#inv').append(html);
+                            } else {
+                                alert("disculpe esta talla ya fue agrega en la corrida " + array);
+                                return false;
+                            }
+
+                        }
+                    }
+
+                    function verificaTalla(n) {
+                        $("#inv div[id *= 'talla']").each(function(index, element) {
+                            if ($(element).text == "") {
+                                bValid = true;
+                            } else {
+                                if ($(element).attr('title') == n) {
+                                    bValid = false;
+                                }
+                            }
+                        });
+
+                    }
+
+                    $('#slt_talla').on('change', function(event) {
+                        event.preventDefault();
+                        var array = talla.val().split("/");
+                        var htmlString = $(this).html();
+                        //Le Pasamos el orden de la corrida de tallas
+                        listarInventario(array[1]);
+                    });
+                });
+            })
+        </script>    
     </body>
 </html>
