@@ -3,16 +3,16 @@ require '../config.php';
 require 'class/modelo.class.php';
 require 'class/color.class.php';
 require 'class/talla.class.php';
+require 'class/articles.class.php';
 $modelos = new modelo;
 $colores = new color;
 $tallas = new talla;
+$articulos = new articles;
 
 $models = $modelos->listar();
 $color = $colores->listar();
 $talla = $tallas->listar();
-
-
-//die();
+$aticulo = $articulos->lastInsertId();
 ?>
 <!DOCTYPE html>
 <html lang="Es-es">
@@ -86,12 +86,18 @@ $talla = $tallas->listar();
                                 <div class="panel-heading">
                                     <h2><strong>Forma Basica</strong> Articulos</h2>
                                 </div>
-                                <div class="panel-body">
-                                    <form action="" method="post" enctype="multipart/form-data" class="form-horizontal ">
+                                <form action="form_process.php" method="post" enctype="multipart/form-data" class="form-horizontal ">
+                                    <div class="panel-body">
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Empresa</label>
                                             <div class="col-md-9">
                                                 <p class="form-control-static">Empresa de prueba</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Codigo Articulo</label>
+                                            <div class="col-md-9">
+                                                <input type="text" readonly="readonly" id="txt_codigo" required="required" name="txt_codigo" class="form-control" placeholder="" value="<?php echo $aticulo; ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -130,11 +136,24 @@ $talla = $tallas->listar();
                                                 </select>
                                             </div>
                                         </div>
-
                                         <div class="form-group has-feedback">
                                             <label class="col-md-3 control-label" for="text-input">Costo</label>
                                             <div class="col-md-9">
-                                                <input type="text" id="text-input" required="required" id="txt_costo" name="txt_costo" class="form-control" placeholder="00">
+                                                <input type="text"  id="txt_costo" name="txt_costo" class="form-control" placeholder="00">
+                                                <span class="fa fa-asterisk form-control-feedback"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <label class="col-md-3 control-label" for="text-input">Precio al Publico</label>
+                                            <div class="col-md-9">
+                                                <input type="text"   id="txt_precio_pub" name="txt_precio_pub" class="form-control" placeholder="00">
+                                                <span class="fa fa-asterisk form-control-feedback"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <label class="col-md-3 control-label" for="text-input">Codigo Alterno</label>
+                                            <div class="col-md-9">
+                                                <input type="text"  id="txt_cod_alterno" name="txt_cod_alterno" class="form-control" placeholder="">
                                                 <span class="fa fa-asterisk form-control-feedback"></span>
                                             </div>
                                         </div>
@@ -159,22 +178,30 @@ $talla = $tallas->listar();
                                                 </select>
                                             </div>
                                         </div>
+                                        
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="textarea-input">Descripcion</label>
                                             <div class="col-md-9">
                                                 <textarea id="text_descripcion" name="text_descripcion" rows="9" class="form-control" placeholder="Content.." style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 194px;"></textarea>
                                             </div>
                                         </div>
+                                          <div class="form-group has-feedback">
+                                            <label class="col-md-3 control-label" for="text-input">Directorio Imagen</label>
+                                            <div class="col-md-9">
+                                                <input type="text"  id="txt_img" name="txt_img" class="form-control" placeholder="">
+                                                <span class="fa fa-asterisk form-control-feedback"></span>
+                                            </div>
+                                        </div>
                                         <div id="inv" class="row">
 
                                         </div>
-                                    </form>
-                                </div>
-
-                                <div class="panel-footer">
-                                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Guardar</button>
-                                    <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Limpiar</button>
-                                </div>	
+                                    </div>
+                                    <div class="panel-footer">
+                                        <input type="hidden" name="form" value="agregar-articulo">
+                                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Guardar</button>
+                                        <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Limpiar</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -195,6 +222,8 @@ $talla = $tallas->listar();
                     var cat = $('#slt_cat'),
                             subCat = $('#slt_sub_cat'),
                             costo = $('#txt_costo'),
+                            preciopub = $('#txt_precio_pub'),
+                            codalterno = $('#txt_cod_alterno'),
                             talla = $('#slt_talla'),
                             existencia = $('#txt_existencia'),
                             descripcion = $('#text_descripcion'),
@@ -210,19 +239,19 @@ $talla = $tallas->listar();
                             if (bValid) {
                                 var html = '<div id="talla" title="' + n + '" class="col-md-12">';
                                 html += '<div class="form-group col-md-2">'
-                                html += '<input class="form-control" value="' + n + '">';
+                                html += '<input id="txt_talla[' + n + ']" name="txt_talla[' + n + ']" class="form-control" value="' + n + '">';
                                 html += '</div>';
                                 html += '<div class="form-group col-md-2">'
-                                html += '<input class="form-control" placeholder="Existencia" value="">';
+                                html += '<input id="txt_existencia[' + n + ']" name = "txt_existencia[' + n + ']" class="form-control" placeholder="Existencia" value="">';
                                 html += '</div>';
                                 html += '<div class="form-group col-md-3">'
-                                html += '<input class="form-control" placeholder="Codigo Alterno" value="">';
+                                html += '<input id="txt_cod_alterno[' + n + ']" class="form-control" placeholder="Codigo Alterno" value="' + codalterno.val() + '-' + n + '">';
                                 html += '</div>';
                                 html += '<div class="form-group col-md-2">'
-                                html += '<input class="form-control" placeholder="Costo" value="">';
+                                html += '<input id="txt_costo[' + n + ']" name="txt_costo[' + n + ']" class="form-control" placeholder="Costo" value="' + costo.val() + '">';
                                 html += '</div>';
                                 html += '<div class="form-group col-md-3">'
-                                html += '<input class="form-control" placeholder="Precio al Publico" value="">';
+                                html += '<input id="txt_precio_pub[' + n + ']" name="txt_precio_pub[' + n + ']" class="form-control" placeholder="Precio al Publico" value="' + preciopub.val() + '">';
                                 html += '</div>';
                                 html += '</div>';
                                 $('#inv').append(html);
