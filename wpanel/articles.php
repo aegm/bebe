@@ -3,11 +3,12 @@ require '../config.php';
 require 'class/modelo.class.php';
 require 'class/color.class.php';
 require 'class/talla.class.php';
-require 'class/articles.class.php';
+require 'class/articulos.class.php';
 $modelos = new modelo;
 $colores = new color;
 $tallas = new talla;
-$articulos = new articles;
+$articulos = new articulos;
+
 
 $models = $modelos->listar();
 $color = $colores->listar();
@@ -245,7 +246,7 @@ $aticulo = $articulos->lastInsertId();
                                 html += '<input id="txt_existencia[' + n + ']" name = "txt_existencia[' + n + ']" class="form-control" placeholder="Existencia" value="">';
                                 html += '</div>';
                                 html += '<div class="form-group col-md-3">'
-                                html += '<input id="txt_cod_alterno[' + n + ']" class="form-control" placeholder="Codigo Alterno" value="' + codalterno.val() + '-' + n + '">';
+                                html += '<input id="txt_cod_alterno[' + n + ']" name = "txt_cod_alterno[' + n + ']" class="form-control" placeholder="Codigo Alterno" value="' + codalterno.val() + '-' + n + '">';
                                 html += '</div>';
                                 html += '<div class="form-group col-md-2">'
                                 html += '<input id="txt_costo[' + n + ']" name="txt_costo[' + n + ']" class="form-control" placeholder="Costo" value="' + costo.val() + '">';
